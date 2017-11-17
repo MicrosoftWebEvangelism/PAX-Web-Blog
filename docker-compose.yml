@@ -1,0 +1,8 @@
+# To run: docker-compose run jekyll bash
+jekyll:
+    image: jekyll/builder:latest
+    command: bash -c "apk update && apk add yarn && bin/setup && bundle exec jekyll serve --incremental"
+    ports:
+        - 4000:4000
+    volumes:
+        - .:/srv/jekyll
